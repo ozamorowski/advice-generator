@@ -3,7 +3,13 @@
   "version": "1.0.0",
   "description": "![Design preview for the Advice generator app coding challenge](./design/desktop-preview.jpg)",
   "main": "script.js",
-  "scripts": {},
+  "scripts": {
+    "watch": "tailwindcss -i ./input.css -o ./style.css --watch",
+    "build": "tailwindcss -i ./input.css -o ./style.css"
+  },
   "author": "Oskar Zamorowski",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.0.24"
+  }
 }
