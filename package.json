@@ -1,0 +1,9 @@
+{
+  "name": "advice-generator",
+  "version": "1.0.0",
+  "description": "![Design preview for the Advice generator app coding challenge](./design/desktop-preview.jpg)",
+  "main": "script.js",
+  "scripts": {},
+  "author": "Oskar Zamorowski",
+  "license": "ISC"
+}
