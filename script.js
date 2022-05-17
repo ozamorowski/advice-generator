@@ -5,12 +5,12 @@
 })();
 
 async function getAdvice() {
-	const loading = document.querySelector('#loading')
+	// const loading = document.querySelector('#loading')
 
-	loading.style.display = 'block'
+	// loading.style.display = 'block'
 	const { id, advice } = await fetchApi()
 	setAdviceHTML(id, advice)
-	loading.style.display = 'none'
+	// loading.style.display = 'none'
 }
 
 async function fetchApi() {
@@ -25,5 +25,5 @@ function setAdviceHTML(id, advice) {
 	const adviceText = document.querySelector('#advice-text')
 
 	adviceId.innerHTML = id
-	adviceText.innerHTML = advice
+	adviceText.innerHTML = '"' + advice + '"'
 }
