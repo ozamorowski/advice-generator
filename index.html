@@ -22,7 +22,7 @@
     class="flex h-screen w-screen flex-wrap content-center justify-center bg-dark-blue font-['Manrope']"
   >
     <div
-      class="relative w-1/2 rounded-2xl bg-dark-grayish-blue p-6 text-center text-white"
+      class="relative w-11/12 rounded-2xl bg-dark-grayish-blue p-6 text-center text-white sm:w-1/2"
     >
       <!-- <div id="loading">Loading...</div> -->
       <div class="mb-9 text-neon-green">
@@ -33,6 +33,12 @@
         class="mb-9 flex h-32 flex-wrap content-center justify-center text-3xl"
       ></div>
       <img
+        srcset="
+          images/pattern-divider-mobile.svg  480w,
+          images/pattern-divider-desktop.svg 800w
+        "
+        sizes="(max-width: 600px) 480px,
+            800px"
         src="images/pattern-divider-desktop.svg"
         class="my-6 mx-auto"
         alt="divider"
