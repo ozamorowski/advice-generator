@@ -5,12 +5,17 @@
 })();
 
 async function getAdvice() {
-	// const loading = document.querySelector('#loading')
+	const loading = document.querySelector('#loading')
+	const adviceText = document.querySelector('#advice-text')
 
-	// loading.style.display = 'block'
+	adviceText.style.display = 'none'
+	loading.style.display = 'flex'
+
 	const { id, advice } = await fetchApi()
 	setAdviceHTML(id, advice)
-	// loading.style.display = 'none'
+
+	loading.style.display = 'none'
+	adviceText.style.display = 'flex'
 }
 
 async function fetchApi() {
