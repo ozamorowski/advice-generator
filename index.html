@@ -18,66 +18,69 @@
     <link rel="stylesheet" href="style.css" />
     <title>Frontend Mentor | Advice generator app</title>
   </head>
-  <body
-    class="flex h-screen w-screen flex-wrap content-center justify-center bg-dark-blue font-['Manrope']"
-  >
-    <div
-      class="relative w-11/12 rounded-2xl bg-dark-grayish-blue p-6 text-center text-white sm:w-1/2"
+
+  <body>
+    <main
+      class="flex h-screen w-screen flex-wrap content-center justify-center bg-dark-blue font-['Manrope']"
     >
-      <div class="mb-9 text-neon-green">
-        Advice #<span id="advice-id"></span>
-      </div>
       <div
-        id="loading"
-        class="mb-9 h-32 flex-wrap content-center justify-center"
+        class="relative w-11/12 rounded-2xl bg-dark-grayish-blue p-6 text-center text-white sm:w-1/2"
       >
-        <svg
-          role="status"
-          class="mr-2 h-8 w-8 animate-spin fill-neon-green text-dark-blue"
-          viewBox="0 0 100 101"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
+        <div class="mb-9 text-neon-green">
+          Advice #<span id="advice-id"></span>
+        </div>
+        <div
+          id="loading"
+          class="mb-9 h-32 flex-wrap content-center justify-center"
         >
-          <path
-            d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
-            fill="currentColor"
-          />
-          <path
-            d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
-            fill="currentFill"
-          />
-        </svg>
+          <svg
+            role="status"
+            class="mr-2 h-8 w-8 animate-spin fill-neon-green text-dark-blue"
+            viewBox="0 0 100 101"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
+              fill="currentColor"
+            />
+            <path
+              d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
+              fill="currentFill"
+            />
+          </svg>
+        </div>
+
+        <h1
+          id="advice-text"
+          class="mb-9 hidden h-32 flex-wrap content-center justify-center text-3xl"
+        ></h1>
+
+        <img
+          srcset="
+            images/pattern-divider-mobile.svg  480w,
+            images/pattern-divider-desktop.svg 800w
+          "
+          sizes="(max-width: 600px) 480px,
+              800px"
+          src="images/pattern-divider-desktop.svg"
+          class="my-6 mx-auto"
+          alt="divider"
+          width="444"
+          height="16"
+        />
+        <button
+          id="load-next"
+          aria-label="New advice"
+          class="absolute bottom-0 left-0 right-0 mr-auto ml-auto -mb-7 h-14 w-14 rounded-full bg-neon-green hover:shadow-3xl"
+        >
+          <i
+            style="background: url('images/icon-dice.svg')"
+            class="m-auto block h-6 w-6"
+          ></i>
+        </button>
       </div>
-
-      <div
-        id="advice-text"
-        class="mb-9 hidden h-32 flex-wrap content-center justify-center text-3xl"
-      ></div>
-
-      <img
-        srcset="
-          images/pattern-divider-mobile.svg  480w,
-          images/pattern-divider-desktop.svg 800w
-        "
-        sizes="(max-width: 600px) 480px,
-            800px"
-        src="images/pattern-divider-desktop.svg"
-        class="my-6 mx-auto"
-        alt="divider"
-        width="444"
-        height="16"
-      />
-      <button
-        id="load-next"
-        class="absolute bottom-0 left-0 right-0 mr-auto ml-auto -mb-7 h-14 w-14 rounded-full bg-neon-green hover:shadow-3xl"
-      >
-        <i
-          style="background: url('images/icon-dice.svg')"
-          class="m-auto block h-6 w-6"
-        ></i>
-      </button>
-    </div>
-
+    </main>
     <script src="script.js"></script>
   </body>
 </html>
